@@ -1,0 +1,6 @@
+*.log
+*.js
+*.map
+.vimrc
+node_modules/
+typings/
