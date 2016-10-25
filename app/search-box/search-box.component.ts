@@ -6,11 +6,16 @@ import { SearchBoxService } from './search-box.service'
   template: `
     <form class="col-xs-6">
       <input class="form-control" name="searchText" [(ngModel)]="searchText" (ngModelChange)="onSearchTextChange($event)" />
-      <div *ngIf="songs.length > 0">
-        <rt-song-item [song]="song" *ngFor="let song of songs"></rt-song-item>
+      <div class="song-list" *ngIf="songs.length > 0">
+        <rt-song-item [song]="song" (songSelect)="onSongSelected($event)" *ngFor="let song of songs"></rt-song-item>
       </div>
     </form>
-  `
+  `,
+  styles: [`
+    .song-list {
+      border: solid 1px black;
+    }
+  `];
 })
 export class SearchBoxComponent {
   songs: Array<any> = [
@@ -23,5 +28,9 @@ export class SearchBoxComponent {
 
   onSearchTextChange(searchText) {
     this.songs = this.searcher.getSongs(searchText);
+  }
+
+  onSongSelected(song) {
+    console.log(song.title);
   }
 }
