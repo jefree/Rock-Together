@@ -1,6 +1,7 @@
 *.log
 *.js
 *.map
+*.swp
 .vimrc
 node_modules/
 typings/
