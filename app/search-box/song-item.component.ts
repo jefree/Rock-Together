@@ -17,9 +17,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
 })
 export class SongItemComponent {
   @Input() song;
-  @Output() songSelect = new EventEmitter();
+  @Output() songSelected = new EventEmitter();
 
   onSongClicked() {
-    this.songSelect.emit(this.song);
+    this.songSelected.emit(this.song);
   }
 }
