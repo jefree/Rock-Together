@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SearchBoxModule } from '../search-box/search-box.module';
+import { TopListModule } from '../top-list/top-list.module';
 
 import { SessionComponent } from './session.component';
 
@@ -9,7 +10,8 @@ import { SessionComponent } from './session.component';
   imports: [
     CommonModule,
 
-    SearchBoxModule
+    SearchBoxModule,
+    TopListModule
   ],
   declarations: [ SessionComponent ],
   exports: [ SessionComponent ]

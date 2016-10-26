@@ -4,7 +4,12 @@ import { Component } from '@angular/core'
   selector: 'rt-session',
   template: `
     <h1>Welcome to a new session of Rock Together</h1>
-    <rt-search-box></rt-search-box>
+    <div>
+      <rt-search-box></rt-search-box>
+    </div>
+    <div>
+      <rt-top-list></rt-top-list>
+    </div>
   `,
   styles: [`
     h1 {

@@ -4,16 +4,18 @@ import { SearchBoxService } from './search-box.service'
 @Component({
   selector: 'rt-search-box',
   template: `
-    <form class="col-xs-6">
-      <input class="form-control" name="searchText"
-       [(ngModel)]="searchText"
-       (ngModelChange)="onSearchTextChange($event)"
-       (focusout)="onInputFocusOut()"
-        />
-      <div class="song-list" *ngIf="showSongList()" (mouseenter)="toggleMouseOver(true)" (mouseleave)="toggleMouseOver(false)">
-        <rt-song-item [song]="song" (songSelected)="onSongSelected($event)" *ngFor="let song of songs"></rt-song-item>
-      </div>
-    </form>
+    <div class="row">
+      <form>
+        <input class="form-control" name="searchText"
+         [(ngModel)]="searchText"
+         (ngModelChange)="onSearchTextChange($event)"
+         (focusout)="onInputFocusOut()"
+          />
+        <div class="song-list" *ngIf="showSongList()" (mouseenter)="toggleMouseOver(true)" (mouseleave)="toggleMouseOver(false)">
+          <rt-song-item [song]="song" (songSelected)="onSongSelected($event)" *ngFor="let song of songs"></rt-song-item>
+        </div>
+      </form>
+    </div>
   `,
   styles: [`
     .song-list {
